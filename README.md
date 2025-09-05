@@ -1,6 +1,6 @@
 # Rivalcfg Battery Indicator Setup
 
-This GNOME Shell extension uses `rivalcfg` to get battery information from your SteelSeries device. For this to work, you need to install `rivalcfg`.
+This GNOME Shell extension uses `rivalcfg` to get battery information from your SteelSeries mouse device. For this to work, you need to install `rivalcfg`.
 
 The recommended way to install `rivalcfg` is by using `pipx`.
 
