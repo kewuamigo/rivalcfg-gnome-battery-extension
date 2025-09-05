@@ -1,6 +1,6 @@
 {
   "name": "RivalcfgIndicator",
-  "description": "Battery indicator for GNOME Shell 48 using UPower or an external script.",
+  "description": "Battery indicator for GNOME Shell 48 using UPower or rivalcfg. Requires rivalcfg in PATH. If installed in a venv, add it to PATH first, e.g.: export PATH=/home/<yourname>/rivalcfg/rivalcfg.env/bin:$PATH",
   "uuid": "kewuamigo@kewuamigo.eu",
   "settings-schema": "org.gnome.shell.extensions.kewu",
   "shell-version": [

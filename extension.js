@@ -33,7 +33,7 @@ import * as Util from 'resource:///org/gnome/shell/misc/util.js';
 
 const Indicator = GObject.registerClass(
 class Indicator extends PanelMenu.Button {
-    _init(settings) {
+    _init(settings, uuid) {
         super._init(0.0, _('Battery Indicator'));
 
         // UI: icon + small percentage label
@@ -49,8 +49,9 @@ class Indicator extends PanelMenu.Button {
         box.add_child(this._icon);
         box.add_child(this._label);
         this.add_child(box);
-        // Settings (provided by extension instance)
-        this._settings = settings;
+    // Settings (provided by extension instance) and uuid
+    this._settings = settings;
+    this._uuid = uuid;
     this._settings = settings;
 
     // UPower client and display device (fallback/default)
@@ -104,9 +105,9 @@ class Indicator extends PanelMenu.Button {
             try {
                 ExtensionUtils.openPrefs();
             } catch (e) {
-                // Fallback for older API
                 try {
-                    Main.extensionManager.openExtensionPrefs(ExtensionUtils.getCurrentExtension().uuid, '', {});
+                    if (this._uuid)
+                        Main.extensionManager.openExtensionPrefs(this._uuid, '', {});
                 } catch (err) {
                     logError(err);
                 }
@@ -394,7 +395,7 @@ export default class IndicatorExampleExtension extends Extension {
     enable() {
     // metadata.json contains settings-schema, so this.getSettings() resolves it
     const settings = this.getSettings();
-    this._indicator = new Indicator(settings);
+    this._indicator = new Indicator(settings, this.uuid);
         Main.panel.addToStatusArea(this.uuid, this._indicator);
     }
 
