@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema id="org.gnome.shell.extensions.kewu" path="/org/gnome/shell/extensions/kewu/">
+  <schema id="com.github.shell.extensions.kewuamigo" path="/com/github/shell/extensions/kewuamigo/">
     <key name="refresh-seconds" type="i">
-      <default>60</default>
+      <default>5</default>
       <summary>Refresh interval in seconds</summary>
   <description>How often to poll rivalcfg for battery status.</description>
     </key>

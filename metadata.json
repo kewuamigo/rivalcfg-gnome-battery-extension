@@ -1,8 +1,8 @@
 {
   "name": "SteelSeries Mouse Battery Indicator",
-  "description": "Battery indicator for GNOME Shell 48 using  rivalcfg. Requires rivalcfg with pipx install rivalcfg than pipx ensurepath",
+  "description": "Battery indicator for GNOME Shell 48 using  rivalcfg. Requires rivalcfg with pipx install rivalcfg than pipx ensurepath https://github.com/kewuamigo/rivalcfg-gnome-battery-extension",
   "uuid": "kewuamigo@kewuamigo.eu",
-  "settings-schema": "org.gnome.shell.extensions.kewu",
+  "settings-schema": "com.github.shell.extensions.kewuamigo",
   "shell-version": [
     "48"
   ]

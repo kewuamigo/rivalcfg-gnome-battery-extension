@@ -7,7 +7,7 @@ import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Ex
 
 export default class KewuPrefs extends ExtensionPreferences {
     fillPreferencesWindow(window) {
-        const settings = this.getSettings('org.gnome.shell.extensions.kewu');
+        const settings = this.getSettings('com.github.shell.extensions.kewuamigo');
 
         const page = new Adw.PreferencesPage({ title: _('Battery Indicator') });
 
@@ -19,7 +19,7 @@ export default class KewuPrefs extends ExtensionPreferences {
             subtitle: _('How often to poll rivalcfg'),
         });
         const adj = new Gtk.Adjustment({
-            lower: 5,
+            lower: 1,
             upper: 3600,
             step_increment: 1,
             page_increment: 10,
