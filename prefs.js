@@ -3,7 +3,6 @@
 
 import Gtk from 'gi://Gtk?version=4.0';
 import Adw from 'gi://Adw?version=1';
-import Gio from 'gi://Gio';
 import {ExtensionPreferences, gettext as _} from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 export default class KewuPrefs extends ExtensionPreferences {
@@ -12,36 +11,12 @@ export default class KewuPrefs extends ExtensionPreferences {
 
         const page = new Adw.PreferencesPage({ title: _('Battery Indicator') });
 
-        // Script path
+        // General
         const groupGeneral = new Adw.PreferencesGroup({ title: _('General') });
-        const rowScript = new Adw.ActionRow({
-            title: _('Script path (optional)'),
-            subtitle: _('Optional fallback. The extension first tries “rivalcfg --battery-level” via PATH.'),
-        });
-        const entry = new Gtk.Entry({ hexpand: true });
-        entry.text = settings.get_string('script-path');
-        entry.placeholder_text = '/home/you/battery.sh';
-        entry.connect('changed', w => settings.set_string('script-path', w.text));
-        rowScript.add_suffix(entry);
-        rowScript.activatable_widget = entry;
-        groupGeneral.add(rowScript);
-
-        // Extra PATH
-        const rowPath = new Adw.ActionRow({
-            title: _('Extra PATH'),
-            subtitle: _('Colon-separated directories to prepend when running commands (e.g., /home/you/venv/bin)'),
-        });
-        const entryPath = new Gtk.Entry({ hexpand: true });
-        entryPath.text = settings.get_string('extra-path');
-        entryPath.placeholder_text = '/home/kewu/rivalcfg/rivalcfg.env/bin';
-        entryPath.connect('changed', w => settings.set_string('extra-path', w.text));
-        rowPath.add_suffix(entryPath);
-        rowPath.activatable_widget = entryPath;
-        groupGeneral.add(rowPath);
         // Refresh interval
         const rowRefresh = new Adw.ActionRow({
             title: _('Refresh seconds'),
-            subtitle: _('How often to poll the script when set'),
+            subtitle: _('How often to poll rivalcfg'),
         });
         const adj = new Gtk.Adjustment({
             lower: 5,

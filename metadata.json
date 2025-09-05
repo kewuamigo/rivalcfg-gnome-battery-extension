@@ -1,6 +1,6 @@
 {
-  "name": "RivalcfgIndicator",
-  "description": "Battery indicator for GNOME Shell 48 using UPower or rivalcfg. Requires rivalcfg in PATH. If installed in a venv, add it to PATH first, e.g.: export PATH=/home/<yourname>/rivalcfg/rivalcfg.env/bin:$PATH",
+  "name": "SteelSeries Mouse Battery Indicator",
+  "description": "Battery indicator for GNOME Shell 48 using  rivalcfg. Requires rivalcfg with pipx install rivalcfg than pipx ensurepath",
   "uuid": "kewuamigo@kewuamigo.eu",
   "settings-schema": "org.gnome.shell.extensions.kewu",
   "shell-version": [
