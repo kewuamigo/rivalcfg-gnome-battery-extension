@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.kewu" path="/org/gnome/shell/extensions/kewu/">
+    <key name="script-path" type="s">
+      <default>''</default>
+      <summary>Path to the battery status script</summary>
+      <description>
+        Absolute path to a shell script that prints a single line like:
+        "Discharging [========= ] 95 %" or "Charging [===== ] 40 %".
+        The extension will parse percentage and state (Charging/Discharging).
+      </description>
+    </key>
+    <key name="refresh-seconds" type="i">
+      <default>60</default>
+      <summary>Refresh interval in seconds</summary>
+      <description>How often to poll the script when present.</description>
+    </key>
+    <key name="extra-path" type="s">
+      <default>''</default>
+      <summary>Extra PATH entries to prepend</summary>
+      <description>
+        Optional colon-separated directories to prepend to PATH when running external commands
+        (e.g., /home/you/venv/bin). Used for resolving 'rivalcfg' without editing system PATH.
+      </description>
+    </key>
+  </schema>
+</schemalist>

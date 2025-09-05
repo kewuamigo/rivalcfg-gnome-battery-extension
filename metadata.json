@@ -1,0 +1,9 @@
+{
+  "name": "RivalcfgIndicator",
+  "description": "Battery indicator for GNOME Shell 48 using UPower or an external script.",
+  "uuid": "kewuamigo@kewuamigo.eu",
+  "settings-schema": "org.gnome.shell.extensions.kewu",
+  "shell-version": [
+    "48"
+  ]
+}
